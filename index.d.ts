@@ -58,6 +58,6 @@ declare module '~chai/lib/Chai' {
 declare module '~chai/lib/Assertion' {
   export interface AssertionStatic {
     called: SpyCalled;
-    spy: any
+    spy: Function;
   }
 }
