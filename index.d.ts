@@ -63,7 +63,5 @@ declare module '~chai/lib/Assertion' {
   }
 }
 
-interface ChaiSpies {
-  (chai: any, _: Utils.Utils): void;
-}
+declare function ChaiSpies(chai: any, _: Utils.Utils): void;
 export = ChaiSpies;

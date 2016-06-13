@@ -9,6 +9,9 @@
   },
   "exclude": [
     "node_modules",
+    "typings/globals",
+    "typings/modules",
+    "out",
     "source"
   ]
 }
