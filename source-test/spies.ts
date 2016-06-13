@@ -208,7 +208,6 @@ describe('Chai Spies', function () {
 
   it('should spy specified object method', function () {
     const array = chai.spy.on([], 'push');
-    console.log('ARRAY:', array, array.push);
 
     array.push(1, 2);
 
