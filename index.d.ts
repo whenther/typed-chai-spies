@@ -1,9 +1,10 @@
 // Type definitions for chai-spies 0.7.1
 // Project: https://github.com/chaijs/chai-spies
 // Definitions by: Will Lee-Wagner <http://whentheresawill.net/>
-// Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
+// Definitions: https://github.com/whenther/typed-chai-spies
 
 import {Assertion} from '~chai/lib/Assertion';
+import * as Utils from '~chai/lib/Utils';
 
 interface ChaiProxy extends Function {
   reset(): ChaiProxy;
@@ -61,3 +62,8 @@ declare module '~chai/lib/Assertion' {
     spy: Function;
   }
 }
+
+interface ChaiSpies {
+  (chai: any, _: Utils.Utils): void;
+}
+export = ChaiSpies;
