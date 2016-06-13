@@ -38,11 +38,11 @@ interface ChaiSpy {
    *      var spy = chai.spy.on(Array, 'isArray');
    *
    * @param {Object} object
-   * @param {...String} method names to spy on
-   * @returns passed object
+   * @param {String} method name to spy on
+   * @returns function to actually call
    * @api public
    */
-  on<T>(object: T, ...args: string[]): T;
+  on(object: any, methodName: string): ChaiProxy;
   /**
    * Creates an object with spied methods.
    *

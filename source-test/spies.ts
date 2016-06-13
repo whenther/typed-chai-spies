@@ -52,7 +52,6 @@ describe('Chai Spies', function () {
   it('should invoke the function sent to the spy', function() {
     const spy = chai.spy();
     chai.spy(spy)();
-
     spy.should.have.been.called.once;
   });
 
@@ -198,36 +197,22 @@ describe('Chai Spies', function () {
   });
 
   it('should understand length', function () {
-    const orig = function (a: any, b: any) {}
-      , spy = chai.spy(orig)
-      , spyClean = chai.spy();
+    const orig = function (a: any, b: any) {};
+    const spy = chai.spy(orig);
+    const spyClean = chai.spy();
     orig.should.have.length(2);
     spy.should.have.length(2);
     spyClean.should.have.length(0);
   });
 
-  it('should spy specified object method', function () {
-    const array = chai.spy.on([], 'push');
+  it('spies specified object method', function() {
+    const array = [];
 
+    chai.spy.on(array, 'push');
     array.push(1, 2);
 
     array.push.should.be.a.spy;
     array.should.have.length(2);
-  });
-
-  it('should create spy which returns static value', function() {
-    const value = {};
-    const spy = chai.spy.returns(value);
-
-    spy.should.be.a.spy;
-    spy().should.equal(value);
-  });
-
-  it('should spy multiple object methods passed as array', function () {
-    const array = chai.spy.on([], 'push', 'pop');
-
-    array.push.should.be.a.spy;
-    array.pop.should.be.a.spy;
   });
 
   describe('.with', function () {
