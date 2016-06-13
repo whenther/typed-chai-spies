@@ -1,7 +1,15 @@
-import test = require('blue-tape');
-
 import chai = require('chai');
-import chaiSpies = require('chai-spies');
+import spies = require('chai-spies');
+chai.use(spies);
 
 const expect = chai.expect;
 
+describe('simple test', () => {
+  it('should spy on a function', () => {
+    const spy = chai.spy();
+
+    spy();
+
+    expect(spy).to.have.been.called.once();
+  });
+});

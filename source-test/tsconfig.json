@@ -5,6 +5,7 @@
   },
   "files": [
     "../typings/index.d.ts",
-    "../out/chai-spies.d.ts"
+    "../out/chai-spies.d.ts",
+    "spies.ts"
   ]
 }
